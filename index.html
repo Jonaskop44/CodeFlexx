@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta2/css/all.css"/>
+  <script src="js/tailwind.js"></script>
+  <script src="https://unpkg.com/scrollreveal%404.0.0/dist/scrollreveal.min.js"></script>
+  <link rel="icon" href="img/favicon.ico">
+  <title>CodeFlexx</title>
+</head>
+
+<body>
+  <nav id='nav' style="width: 100vw; backdrop-filter: blur(5px); box-shadow: inset 0 -1px 0 0 hsla(0,0%,100%,0.1)">
+    <div class="nav-container-custom nav-wrapper">
+      <div class="brand">
+        <strong class="shine" style="color: white; font-size: 30px; display: flex">
+          <p style="color: #030203">C</p>oding
+        </strong>
+      </div>
+      <div class="hamburger" style="padding-left: 23px;">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-list">
+        <li><button class="nav-link" onclick="scrollToElementhome()">Home</button></li>
+        <li><button class="nav-link" onclick="scrollToElementskills()">Skills</button></li>
+        <li><button class="nav-link" onclick="scrollToElement()">Projects</button></li>
+        </li>
+    </div>
+  </nav>
+  <div id="home" class="main-container">
+    <div class="content" id="">
+      <div class="social">
+        </a>
+        <a href="https://twitter.com/jonaskop44" target="_blank" class="icon">
+          <i class="fab fa-twitter" id="twitter"></i>
+        </a>
+        <a href="https://github.com/Jonaskop44" target="_blank" class="icon">
+          <i class="fab fa-github" id="github"></i>
+        </a>
+        <a href="https://discord.gg/coding" target="_blank" class="icon">
+          <i class="fab fa-discord" id="discord"></i>
+        </a>
+        <a href="https://t.me/Jonaskop44" target="_blank" class="icon">
+          <i class="fab fa-telegram" id="telegram"></i>
+        </a>
+      </div>
+      <div class="text">
+        <h1 class="shine head"><span style="color: #ff0080">Your Welcome</span></h1>
+        <p class="paragraph">Developer</p>
+        <button class="hero-button nav-link" onclick="scrollToElement()">Projects</button>
+      </div>
+    </div>
+
+  </div>
+  <div id="skills" class="skills border-t border-b border-[#333] pt-6">
+    <div class="skills-container py-12 mx-6 rounded-3xl">
+      <h1 class="text-center text-7xl skill-header">Skills</h1>
+      <section id="skill" class="skill">
+        <span class="line"></span>
+        <div class="section-label">
+          <div class="label-number">1</div>
+        </div>
+        <div class="skill-content flex items-center justify-center flex-col lg:flex-row">
+          <div class="skill-img" style="visibility: visible;">
+            <img src="img/ubuntu.png" alt="React" class="block m-auto" style="width: 70%;">
+          </div>
+          <div class="skill-text" style="visibility: visible;">
+            <h4 class="skill-title c-white" style="visibility: visible;">Server Manager</h4>
+            <p class="skill-description grey" style="visibility: visible;">Im managing and setting up Linux Servers.</p>
+          </div>
+        </div>
+      </section>
+      <section id="skill" class="skill">
+        <span class="line ai-line"></span>
+        <div class="section-label">
+          <div class="label-number ai-label">2</div>
+        </div>
+        <div class="skill-content flex items-center justify-center flex-col lg:flex-row-reverse">
+          <div class="skill-img" style="visibility: visible;">
+            <img
+              src="img/java.png"
+              alt="Java" class="block m-auto" style="width: 70%;">
+          </div>
+          <div class="skill-text" style="visibility: visible;">
+            <h4 class="skill-title c-white" style="visibility: visible;">Java</h4>
+            <p class="skill-description grey" style="visibility: visible;">Since 2019 Experience with Java</p>
+          </div>
+        </div>
+      </section>
+      <section id="skill" class="skill">
+        <span class="line language-line"></span>
+        <div class="section-label">
+          <div class="label-number language-label">3</div>
+        </div>
+        <div class="skill-content flex items-center justify-center flex-col lg:flex-row">
+          <div class="skill-img" style="visibility: visible;">
+            <img src="img/js%20icon.png" alt="React" class="block m-auto" style="width: 65%;">
+          </div>
+          <div class="skill-text" style="visibility: visible;">
+            <p><img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&amp;logo=css3&amp;logoColor=white" alt="CSS3"> 
+              <br>
+              <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&amp;logo=html5&amp;logoColor=white" alt="HTML5">
+              <br>
+              <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&amp;logo=javascript&amp;logoColor=%23F7DF1E" alt="JavaScript">
+          </div>
+        </div>
+      </section>
+      <section id="skill" class="skill">
+        <span class="line electron-line"></span>
+        <div class="section-label">
+          <div class="label-number electron-label">4</div>
+        </div>
+        <div class="skill-content flex items-center justify-center flex-col lg:flex-row-reverse">
+          <div class="skill-img" style="visibility: visible;">
+            <img src="img/electron%20icon.png" alt="React" class="block m-auto" style="width: 70%;">
+          </div>
+          <div class="skill-text" style="visibility: visible;">
+            <h4 class="skill-title c-white" style="visibility: visible;">Other Things</h4>
+            <p class="skill-description grey" style="visibility: visible;">MySQL, React, Git, NPM.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  <div id="projects" class="skills border-t border-[#333] pt-6 flex justify-center items-center">
+    <div class="skills-container py-12 mx-6 rounded-3xl">
+      <h1 class="text-center projects-header">Projects</h1>
+      <p class="text-center projects-paragraph">Projects I've made</p>
+      <div class="flex flex-row flex-wrap">
+        <div class="project-content">
+          <!-- Adminpanel -->
+          <div class="card">
+            <div class="card-content">
+            <h3 class="card-heading">Adminpanel</h3>
+            <p class="card-description">All the tools I need for me</p>
+            <div class="buttons">
+              <button onclick="window.open('https://github.com/Jonaskop44/Adminpanel','_blank')" class="card-button">Check it out</button>
+            </div>
+            </div>
+          </div>
+          <!-- Discord-Nuker -->
+          <div class="card">
+            <div class="card-content">
+            <h3 class="card-heading">Discord Nuker</h3>
+            <p class="card-description">A simple Discord Nuke Bot</p>
+            <div class="buttons">
+              <button onclick="window.open('https://github.com/Jonaskop44/Discord-Nuker','_blank')" class="card-button">Check it out</button>
+            </div>
+            </div>
+          </div>
+          <!-- Coming soon -->
+          <div class="card">
+            <div class="card-content">
+            <h3 class="card-heading">CodeFlexx</h3>
+            <p class="card-description">Code from this page</p>
+            <div class="buttons">
+              <button onclick="window.open('https://github.com/Jonaskop44/CodeFlexx','_blank')" class="card-button">Check it out</button>
+            </div>
+            </div>
+          </div>
+          <!-- Coming soon -->
+          <div class="card">
+            <div class="card-content">
+            <h3 class="card-heading">Coming</h3>
+            <p class="card-description">soon</p>
+            <div class="buttons">
+              <button onclick="window.open('','_blank')" class="card-button">Check it out</button>
+            </div>
+            </div>
+          </div>
+          <!-- Coming soon -->
+          <div class="card">
+            <div class="card-content">
+            <h3 class="card-heading">Coming</h3>
+            <p class="card-description">soon</p>
+            <div class="buttons">
+              <button onclick="window.open('','_blank')" class="card-button">Check it out</button>
+            </div>
+            </div>
+          </div>
+    <footer>
+    <div class="footer-content">
+      <h3>Jonas - 2023 ©</h3>
+      <p>Contact me over Email: jonas@codeflexx.com</p>
+      <p>Or Telegram: @Jonaskop44</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
