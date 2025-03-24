@@ -25,6 +25,7 @@ const CustomTabs: FC<CustomTabProps> = ({ tabs, activeTab, setActiveTab }) => {
                 ? "bg-purple-500 text-white"
                 : "bg-black/50 text-gray-300"
             }`}
+            size="lg"
             onPress={() => setActiveTab(tab)}
           >
             {activeTab === tab && (
