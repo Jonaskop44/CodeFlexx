@@ -20,11 +20,3 @@ export interface Skill {
   title: string;
   description: string;
 }
-
-export interface SkillItemProps {
-  icon: string;
-  title: string;
-  description: string;
-  isLast: boolean;
-  index: number;
-}

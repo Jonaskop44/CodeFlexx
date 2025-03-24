@@ -5,7 +5,7 @@ interface AnimatedLinesProps {
   count: number;
 }
 
-const AnimatedLines: FC<AnimatedLinesProps> = ({ count = 5 }) => {
+const AnimatedLines: FC<AnimatedLinesProps> = ({ count }) => {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {Array.from({ length: count }).map((_, index) => {

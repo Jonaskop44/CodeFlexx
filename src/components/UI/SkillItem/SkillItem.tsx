@@ -1,8 +1,15 @@
-import { SkillItemProps } from "@/types";
 import { motion, useInView } from "framer-motion";
 import { FC, useRef } from "react";
 import { getSkillItemAnimations } from "./animations";
 import { Icon } from "@iconify/react";
+
+interface SkillItemProps {
+  description: string;
+  icon: string;
+  index: number;
+  isLast: boolean;
+  title: string;
+}
 
 const SkillItem: FC<SkillItemProps> = ({
   description,
