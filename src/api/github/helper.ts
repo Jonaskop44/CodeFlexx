@@ -4,7 +4,7 @@ export class Helper {
   constructor() {}
 
   async getAllRepositories() {
-    axios
+    return axios
       .get("https://api.github.com/users/Jonaskop44/repos")
       .then((response) => {
         if (response.status !== 200) return { data: null, status: false };
@@ -18,7 +18,7 @@ export class Helper {
   }
 
   async getUser() {
-    axios
+    return axios
       .get("https://api.github.com/users/Jonaskop44")
       .then((response) => {
         if (response.status !== 200) return { data: null, status: false };

@@ -2,20 +2,18 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import type { GithubRepo } from "@/types";
 import { Icon } from "@iconify/react";
 import WaveAnimation from "@/components/Common/WaveAnimation";
 import CustomTabs from "@/components/UI/CustomTabs";
 import ProjectCard from "@/components/UI/ProjectCard";
 import { projectsAnimationVariants } from "./animations";
 import { filterProjects } from "@/hooks/use-projects-filter";
+import { GitHubRepository } from "@/types/github";
 
 export default function ProjectsSection({
   projects,
-  isLoading,
 }: {
-  projects: GithubRepo[];
-  isLoading: boolean;
+  projects: GitHubRepository[];
 }) {
   const [activeTab, setActiveTab] = useState("All Projects");
   const { containerVariants, titleVariants, buttonVariants } =
@@ -43,70 +41,56 @@ export default function ProjectsSection({
             My <span className="text-purple-500">Projects</span>
           </motion.h2>
 
-          {isLoading ? (
-            <div className="flex justify-center">
-              <motion.div
-                className="w-10 h-10 border-4 border-purple-500 border-t-transparent rounded-full"
-                animate={{ rotate: 360 }}
-                transition={{
-                  duration: 1,
-                  repeat: Number.POSITIVE_INFINITY,
-                  ease: "linear",
-                }}
-              ></motion.div>
-            </div>
-          ) : (
-            <div>
-              {/* Custom Tabs */}
-              <CustomTabs
-                tabs={[
-                  "All Projects",
-                  "Web Development",
-                  "Mobile Apps",
-                  "Backend",
-                  "Other",
-                ]}
-                activeTab={activeTab}
-                setActiveTab={setActiveTab}
-              />
+          <div>
+            {/* Custom Tabs */}
+            <CustomTabs
+              tabs={[
+                "All Projects",
+                "Web Development",
+                "Mobile Apps",
+                "Backend",
+                "Other",
+              ]}
+              activeTab={activeTab}
+              setActiveTab={setActiveTab}
+            />
 
-              {/* Projects Grid */}
-              <motion.div
-                className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8"
-                variants={containerVariants}
-                initial="hidden"
-                animate="visible"
-              >
-                {filteredProjects.length > 0 ? (
-                  filteredProjects.map((project) => (
-                    <ProjectCard key={project.id} project={project} />
-                  ))
-                ) : (
-                  <motion.div
-                    className="col-span-3 text-center text-gray-400 py-12"
-                    variants={titleVariants}
-                  >
-                    No projects found in this category
-                  </motion.div>
-                )}
-              </motion.div>
-
-              <div className="text-center mt-12">
-                <motion.a
-                  href="https://github.com/Jonaskop44"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  variants={buttonVariants}
-                  whileHover="hover"
-                  whileTap="tap"
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-full font-medium"
+            {/* Projects Grid */}
+            <motion.div
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              {filteredProjects.length > 0 ? (
+                filteredProjects.map((project) => (
+                  <ProjectCard key={project.id} project={project} />
+                ))
+              ) : (
+                <motion.div
+                  className="col-span-3 text-center text-gray-400 py-12"
+                  variants={titleVariants}
                 >
-                  <Icon icon="mdi:github" className="w-5 h-5" />
-                  View All Projects
-                </motion.a>
-              </div>
+                  No projects found in this category
+                </motion.div>
+              )}
+            </motion.div>
+
+            <div className="text-center mt-12">
+              <motion.a
+                href="https://github.com/Jonaskop44"
+                target="_blank"
+                rel="noopener noreferrer"
+                variants={buttonVariants}
+                whileHover="hover"
+                whileTap="tap"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-full font-medium"
+              >
+                <Icon icon="mdi:github" className="w-5 h-5" />
+                View All Projects
+              </motion.a>
             </div>
-          )}
+          </div>
         </motion.div>
       </div>
     </section>

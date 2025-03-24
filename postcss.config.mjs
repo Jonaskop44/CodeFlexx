@@ -4,8 +4,8 @@ const config = {
       theme: {
         extend: {
           colors: {
-            primary: "#8B5CF6", // purple-500
-            secondary: "#3B82F6", // blue-500
+            primary: "#8B5CF6",
+            secondary: "#3B82F6",
           },
           animation: {
             "accordion-down": "accordion-down 0.2s ease-out",
