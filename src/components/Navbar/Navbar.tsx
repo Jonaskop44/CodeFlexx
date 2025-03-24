@@ -2,7 +2,7 @@ import useIsMobile from "@/hooks/use-mobile";
 import { Button } from "@heroui/react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 import { navLinks } from "./data";
 
@@ -13,6 +13,37 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (
+        isOpen &&
+        !target.closest("#mobile-menu") &&
+        !target.closest("#menu-button")
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [isOpen]);
+
+  // Prevent scrolling when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
 
   return (
     <>
@@ -29,7 +60,7 @@ const Navbar = () => {
             {!isMobile && (
               <nav className="flex items-center space-x-6">
                 {navLinks.map((link) => (
-                  <Button key={link.name} className="rounded-2xl">
+                  <Button key={link.name} className="rounded-2xl" size="lg">
                     <Link
                       href={link.href}
                       className="text-gray-300 font-bold text-xl hover:text-white transition-colors"
@@ -45,6 +76,7 @@ const Navbar = () => {
                   rel="noopener noreferrer"
                   color="primary"
                   variant="flat"
+                  size="lg"
                   className="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-2xl"
                 >
                   GitHub
