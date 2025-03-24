@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { FC, useState } from "react";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 import WaveAnimation from "@/components/Common/WaveAnimation";
@@ -10,21 +10,19 @@ import { projectsAnimationVariants } from "./animations";
 import { filterProjects } from "@/hooks/use-projects-filter";
 import { GitHubRepository } from "@/types/github";
 
-export default function ProjectsSection({
-  projects,
-}: {
+interface ProjectsSectionProps {
   projects: GitHubRepository[];
-}) {
+}
+
+const ProjectsSection: FC<ProjectsSectionProps> = ({ projects }) => {
   const [activeTab, setActiveTab] = useState("All Projects");
   const { containerVariants, titleVariants, buttonVariants } =
     projectsAnimationVariants;
 
-  // Filter projects based on active tab
   const filteredProjects = filterProjects(projects, activeTab);
 
   return (
     <section id="projects" className="py-20 bg-black relative overflow-hidden">
-      {/* Animated wave background */}
       <WaveAnimation />
 
       <div className="container mx-auto px-4 relative z-10">
@@ -95,4 +93,6 @@ export default function ProjectsSection({
       </div>
     </section>
   );
-}
+};
+
+export default ProjectsSection;

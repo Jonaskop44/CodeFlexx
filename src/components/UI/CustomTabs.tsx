@@ -19,14 +19,13 @@ const CustomTabs: FC<CustomTabProps> = ({ tabs, activeTab, setActiveTab }) => {
           transition={{ duration: 0.3, delay: index * 0.1 }}
         >
           <Button
-            color={activeTab === tab ? "primary" : "default"}
             variant={activeTab === tab ? "flat" : "light"}
-            className={`font-medium relative overflow-hidden ${
+            className={`rounded-2xl ${
               activeTab === tab
                 ? "bg-purple-500 text-white"
                 : "bg-black/50 text-gray-300"
             }`}
-            onClick={() => setActiveTab(tab)}
+            onPress={() => setActiveTab(tab)}
           >
             {activeTab === tab && (
               <motion.div

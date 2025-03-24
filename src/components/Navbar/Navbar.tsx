@@ -19,21 +19,24 @@ const Navbar = () => {
       <motion.header className="sticky top-0 left-0 right-0 z-50 backdrop-blur-md bg-black/30 border-b border-white/10">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-            <Link href="/" className="text-xl font-bold text-white">
-              <span className="text-purple-500">Jonas</span>Dev
+            <Link href="/" className="text-3xl font-bold text-white">
+              <span className="animate-gradient bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500">
+                Portfolio
+              </span>
             </Link>
 
             {/* Desktop Navigation */}
             {!isMobile && (
-              <nav className="flex items-center space-x-8">
+              <nav className="flex items-center space-x-6">
                 {navLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    {link.name}
-                  </Link>
+                  <Button key={link.name} className="rounded-2xl">
+                    <Link
+                      href={link.href}
+                      className="text-gray-300 font-bold hover:text-white transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  </Button>
                 ))}
                 <Button
                   as="a"
@@ -42,7 +45,7 @@ const Navbar = () => {
                   rel="noopener noreferrer"
                   color="primary"
                   variant="flat"
-                  className="bg-gradient-to-r from-purple-500 to-blue-500 text-white"
+                  className="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-2xl"
                 >
                   GitHub
                 </Button>
@@ -75,7 +78,7 @@ const Navbar = () => {
           transition={{ type: "tween", duration: 0.3 }}
           className="fixed top-0 right-0 z-40 w-full h-screen bg-black"
         >
-          <div className="flex flex-col h-full pt-20 px-6">
+          <div className="flex flex-col justify-center h-screen pt-20 px-6">
             <nav className="flex flex-col space-y-6 text-center">
               {navLinks.map((link) => (
                 <Link
@@ -94,8 +97,8 @@ const Navbar = () => {
                 rel="noopener noreferrer"
                 color="primary"
                 size="lg"
-                className="bg-gradient-to-r from-purple-500 to-blue-500 text-white mt-4"
-                onClick={() => setIsOpen(false)}
+                className="bg-gradient-to-r from-purple-500 to-blue-500 text-white mt-4 rounded-2xl"
+                onPress={() => setIsOpen(false)}
               >
                 GitHub
               </Button>

@@ -1,17 +1,22 @@
 import AnimatedLines from "@/components/Common/AnimatedLines";
 import { motion } from "framer-motion";
 import { aboutAnimationVariants } from "./animations";
-import { GithubUser } from "@/types/index";
 import { Icon } from "@iconify/react";
 import { Image } from "@heroui/react";
+import { GitHubUser } from "@/types/github";
+import { FC } from "react";
+import { information } from "./data";
 
-const About = ({ user }: { user: GithubUser | null }) => {
+interface AboutProps {
+  user: GitHubUser | null;
+}
+
+const About: FC<AboutProps> = ({ user }) => {
   const { containerVariants, itemVariants, imageVariants, socialVariants } =
     aboutAnimationVariants;
 
   return (
     <div id="about" className="py-20 bg-black relative overflow-hidden">
-      {/* Animated background lines */}
       <AnimatedLines count={8} />
 
       <div className="container mx-auto px-4 relative z-10">
@@ -37,7 +42,6 @@ const About = ({ user }: { user: GithubUser | null }) => {
                 {/* Blue gradient background that extends beyond the image */}
                 <div className="absolute -bottom-4 -right-4 w-full h-full bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl"></div>
 
-                {/* Image container with slight padding to show the gradient "border" */}
                 <div className="relative p-2 bg-black rounded-xl">
                   <Image
                     src={
@@ -52,21 +56,17 @@ const About = ({ user }: { user: GithubUser | null }) => {
             </div>
             <div>
               <motion.p className="text-gray-300 mb-4" variants={itemVariants}>
-                I&apos;m a passionate developer with expertise in modern web
-                technologies. I love creating beautiful, functional, and
+                I&apos;m Jonas, a talented developer with experience in modern
+                web technologies. I love to develop beautiful, functional and
                 user-friendly applications that solve real-world problems.
               </motion.p>
               <motion.p className="text-gray-300 mb-6" variants={itemVariants}>
-                With a strong foundation in NextJS, React, and various frontend
-                technologies, I strive to deliver high-quality code and
+                With a strong foundation in NextJS, NestJS and various frontend
+                technologies, I strive to deliver high quality code and
                 exceptional user experiences.
               </motion.p>
               <div className="flex gap-4">
-                {[
-                  { icon: "mdi:github", href: "https://github.com/Jonaskop44" },
-                  { icon: "mdi:linkedin", href: "#" },
-                  { icon: "mdi:email", href: "mailto:contact@example.com" },
-                ].map((social, index) => (
+                {information.map((social, index) => (
                   <motion.a
                     key={social.icon}
                     href={social.href}

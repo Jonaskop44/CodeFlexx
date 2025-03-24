@@ -8,7 +8,10 @@ const Hero = () => {
     heroAnimationVariants;
 
   return (
-    <div className="h-screen flex items-center justify-center relative overflow-hidden">
+    <div
+      id="home"
+      className="h-screen flex items-center justify-center relative overflow-hidden"
+    >
       <motion.div
         className="absolute inset-0 z-0"
         variants={bgElements}

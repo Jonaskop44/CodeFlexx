@@ -9,7 +9,6 @@ const Skills = () => {
 
   return (
     <div id="skills" className="py-20 bg-black/50 relative overflow-hidden">
-      {/* Animated background shapes */}
       <GeometricShapes count={6} />
 
       <div className="container mx-auto px-4 relative z-10">
