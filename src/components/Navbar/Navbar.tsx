@@ -17,8 +17,8 @@ const Navbar = () => {
   return (
     <>
       <motion.header className="sticky top-0 left-0 right-0 z-50 backdrop-blur-md bg-black/30 border-b border-white/10">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
+        <div className="container mx-auto px-4 md:px-32">
+          <div className="flex items-center justify-between h-16 md:h-22">
             <Link href="/" className="text-3xl font-bold text-white">
               <span className="animate-gradient bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500">
                 Portfolio
@@ -32,7 +32,7 @@ const Navbar = () => {
                   <Button key={link.name} className="rounded-2xl">
                     <Link
                       href={link.href}
-                      className="text-gray-300 font-bold hover:text-white transition-colors"
+                      className="text-gray-300 font-bold text-xl hover:text-white transition-colors"
                     >
                       {link.name}
                     </Link>
@@ -84,7 +84,7 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-xl text-gray-300 hover:text-white transition-colors py-2"
+                  className="py-2 text-gray-300 font-bold text-xl hover:text-white transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
