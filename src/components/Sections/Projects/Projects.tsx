@@ -22,7 +22,7 @@ const ProjectsSection: FC<ProjectsSectionProps> = ({ projects }) => {
   const filteredProjects = filterProjects(projects, activeTab);
 
   return (
-    <section id="projects" className="py-20 bg-black relative overflow-hidden">
+    <div id="projects" className="py-20 bg-black relative overflow-hidden">
       <WaveAnimation />
 
       <div className="container mx-auto px-4 relative z-10">
@@ -91,7 +91,7 @@ const ProjectsSection: FC<ProjectsSectionProps> = ({ projects }) => {
           </div>
         </motion.div>
       </div>
-    </section>
+    </div>
   );
 };
 
