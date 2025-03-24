@@ -22,7 +22,6 @@ const WaveAnimation = () => {
       time += 0.01;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Draw multiple waves with increased opacity
       drawWave(
         ctx,
         time,
