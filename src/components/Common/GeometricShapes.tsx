@@ -3,14 +3,11 @@ import { FC } from "react";
 
 interface GeometricShapesProps {
   count: number;
-  className?: string;
 }
 
-const GeometricShapes: FC<GeometricShapesProps> = ({ count, className }) => {
+const GeometricShapes: FC<GeometricShapesProps> = ({ count }) => {
   return (
-    <div
-      className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}
-    >
+    <div className={`absolute inset-0 overflow-hidden pointer-events-none`}>
       {Array.from({ length: count }).map((_, index) => {
         const shapes = ["circle", "square", "triangle"];
         const shape = shapes[Math.floor(Math.random() * shapes.length)];

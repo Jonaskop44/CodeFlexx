@@ -1,4 +1,3 @@
-import useIsMobile from "@/hooks/use-mobile";
 import { Button } from "@heroui/react";
 import { motion } from "framer-motion";
 import { FC } from "react";
@@ -10,14 +9,8 @@ interface CustomTabProps {
 }
 
 const CustomTabs: FC<CustomTabProps> = ({ tabs, activeTab, setActiveTab }) => {
-  const isMobile = useIsMobile();
-
   return (
-    <div
-      className={`flex flex-wrap ${
-        isMobile ? "gap-1" : "gap-2"
-      } mb-8 justify-center`}
-    >
+    <div className="flex flex-wrap gap-2 mb-8 justify-center">
       {tabs.map((tab, index) => (
         <motion.div
           key={tab}
@@ -26,7 +19,6 @@ const CustomTabs: FC<CustomTabProps> = ({ tabs, activeTab, setActiveTab }) => {
           transition={{ duration: 0.3, delay: index * 0.1 }}
         >
           <Button
-            size={isMobile ? "sm" : "md"}
             color={activeTab === tab ? "primary" : "default"}
             variant={activeTab === tab ? "flat" : "light"}
             className={`font-medium relative overflow-hidden ${

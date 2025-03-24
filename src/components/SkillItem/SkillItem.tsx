@@ -13,7 +13,6 @@ const SkillItem: FC<SkillItemProps> = ({
 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   const { iconVariants, textVariants, lineVariants } =
     getSkillItemAnimations(index);
 

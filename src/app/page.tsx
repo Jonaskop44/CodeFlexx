@@ -1,8 +1,10 @@
+"use client";
+
 import Hero from "@/components/Sections/Hero/Hero";
 
 const Home = () => {
   return (
-    <div>
+    <div className="min-h-screen bg-black text-white">
       <Hero />
       {/* <AboutSection user={user} />
       <SkillsSection />

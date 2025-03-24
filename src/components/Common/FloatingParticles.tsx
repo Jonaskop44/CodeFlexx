@@ -3,13 +3,9 @@ import { FC } from "react";
 
 interface FloatingParticlesProps {
   count: number;
-  className?: string;
 }
 
-const FloatingParticles: FC<FloatingParticlesProps> = ({
-  count,
-  className,
-}) => {
+const FloatingParticles: FC<FloatingParticlesProps> = ({ count }) => {
   const particles = Array.from({ length: count }).map(() => ({
     x: Math.random() * 100,
     y: Math.random() * 100,
@@ -21,9 +17,7 @@ const FloatingParticles: FC<FloatingParticlesProps> = ({
   }));
 
   return (
-    <div
-      className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}
-    >
+    <div className={`absolute inset-0 overflow-hidden pointer-events-none`}>
       {particles.map((particle, index) => (
         <motion.div
           key={index}
