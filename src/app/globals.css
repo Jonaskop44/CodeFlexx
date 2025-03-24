@@ -25,7 +25,6 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -43,7 +42,6 @@ body {
   background: #555;
 }
 
-/* Animated gradient text */
 .animate-gradient {
   background-size: 300% 300%;
   animation: gradient 6s ease infinite;

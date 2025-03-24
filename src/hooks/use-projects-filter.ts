@@ -1,26 +1,26 @@
-import type { GithubRepo } from "@/types";
+import { GitHubRepository } from "@/types/github";
 
-const isWebDevelopment = (project: GithubRepo) =>
+const isWebDevelopment = (project: GitHubRepository) =>
   project.topics.some((topic) =>
     ["nextjs", "tailwindcss", "nextui", "react"].includes(topic.toLowerCase())
   );
 
-const isMobileApp = (project: GithubRepo) =>
+const isMobileApp = (project: GitHubRepository) =>
   project.topics.some((topic) =>
     ["mobile", "android", "ios", "react-native", "flutter"].includes(
       topic.toLowerCase()
     )
   );
 
-const isBackend = (project: GithubRepo) =>
+const isBackend = (project: GitHubRepository) =>
   project.topics.some((topic) =>
     ["nestjs", "prisma"].includes(topic.toLowerCase())
   );
 
 export function filterProjects(
-  projects: GithubRepo[],
+  projects: GitHubRepository[],
   activeTab: string
-): GithubRepo[] {
+): GitHubRepository[] {
   switch (activeTab) {
     case "Web Development":
       return projects.filter(isWebDevelopment);
@@ -32,7 +32,6 @@ export function filterProjects(
       return projects.filter(isBackend);
 
     case "Other":
-      // Everything that doesn't fit in the other categories
       return projects.filter(
         (project) =>
           !isWebDevelopment(project) &&

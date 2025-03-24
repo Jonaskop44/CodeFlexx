@@ -9,6 +9,7 @@ import ProjectCard from "@/components/UI/ProjectCard";
 import { projectsAnimationVariants } from "./animations";
 import { filterProjects } from "@/hooks/use-projects-filter";
 import { GitHubRepository } from "@/types/github";
+import Footer from "@/components/Footer";
 
 interface ProjectsSectionProps {
   projects: GitHubRepository[];
@@ -91,6 +92,8 @@ const ProjectsSection: FC<ProjectsSectionProps> = ({ projects }) => {
           </div>
         </motion.div>
       </div>
+
+      <Footer />
     </div>
   );
 };

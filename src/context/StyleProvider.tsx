@@ -32,11 +32,6 @@ const StyleProvider: FC<StyleProviderProps> = ({ children }) => {
           <>
             <Navbar />
             {children}
-            <footer className="py-8 bg-black text-center text-gray-400 text-sm">
-              <div className="container mx-auto px-4">
-                <p>© {new Date().getFullYear()} Jonas. All rights reserved.</p>
-              </div>
-            </footer>
           </>
         )}
       </HeroUIProvider>
