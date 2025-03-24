@@ -1,7 +1,12 @@
+import Hero from "@/components/Sections/Hero/Hero";
+
 const Home = () => {
   return (
     <div>
-      <h1>tet</h1>
+      <Hero />
+      {/* <AboutSection user={user} />
+      <SkillsSection />
+      <ProjectsSection projects={projects} isLoading={isLoading} /> */}
     </div>
   );
 };

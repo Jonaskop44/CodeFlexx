@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@heroui/react": "^2.7.6-beta.2",
+    "@iconify/react": "^5.2.0",
     "framer-motion": "^12.5.0",
     "next": "15.2.3",
     "react": "^19.0.0",
