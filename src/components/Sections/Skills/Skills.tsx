@@ -1,8 +1,15 @@
-import GeometricShapes from "@/components/Common/GeometricShapes";
 import SkillItem from "@/components/UI/SkillItem/SkillItem";
 import { motion } from "framer-motion";
 import { skills } from "./data";
 import { skillsAnimationVariants } from "./animations";
+import dynamic from "next/dynamic";
+
+const GeometricShapes = dynamic(
+  () => import("@/components/Common/GeometricShapes"),
+  {
+    ssr: false,
+  }
+);
 
 const Skills = () => {
   const { containerVariants, titleVariants } = skillsAnimationVariants;

@@ -9,23 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@heroui/react": "^2.8.0",
-    "@iconify/react": "^5.2.0",
-    "axios": "^1.8.4",
+    "@heroui/react": "^2.8.1",
+    "@iconify/react": "^6.0.0",
+    "axios": "^1.10.0",
     "framer-motion": "^12.23.6",
-    "next": "15.2.3",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "zustand": "^5.0.3"
+    "next": "15.4.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "zustand": "^5.0.6"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
+    "@types/node": "^24",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.2.3",
+    "eslint-config-next": "15.4.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

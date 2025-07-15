@@ -1,7 +1,19 @@
 import { motion } from "framer-motion";
 import { heroAnimationVariants } from "./animations";
-import FloatingParticles from "@/components/Common/FloatingParticles";
-import GeometricShapes from "@/components/Common/GeometricShapes";
+import dynamic from "next/dynamic";
+
+const FloatingParticles = dynamic(
+  () => import("@/components/Common/FloatingParticles"),
+  {
+    ssr: false,
+  }
+);
+const GeometricShapes = dynamic(
+  () => import("@/components/Common/GeometricShapes"),
+  {
+    ssr: false,
+  }
+);
 
 const Hero = () => {
   const { containerVariants, itemVariants, buttonVariants, bgElements } =

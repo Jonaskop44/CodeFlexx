@@ -21,14 +21,18 @@ const Home = () => {
     setGithubUser();
 
     setIsLoading(false);
-  }, []);
+  }, [setGithubRepositories, setGithubUser]);
 
   return (
     <div className="min-h-screen bg-black text-white">
       <Hero />
-      <About user={githubUser} />
-      <Skills />
-      <Projects projects={githubRepositories} isLoading={isLoading} />
+      {!isLoading && (
+        <>
+          <About user={githubUser} />
+          <Skills />
+          <Projects projects={githubRepositories} isLoading={isLoading} />
+        </>
+      )}
     </div>
   );
 };

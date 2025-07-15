@@ -1,4 +1,4 @@
-import AnimatedLines from "@/components/Common/AnimatedLines";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { aboutAnimationVariants } from "./animations";
 import { Icon } from "@iconify/react";
@@ -8,8 +8,15 @@ import { FC } from "react";
 import { information } from "./data";
 
 interface AboutProps {
-  user: GitHubUser | null;
+  user: GitHubUser;
 }
+
+const AnimatedLines = dynamic(
+  () => import("@/components/Common/AnimatedLines"),
+  {
+    ssr: false,
+  }
+);
 
 const About: FC<AboutProps> = ({ user }) => {
   const { containerVariants, itemVariants, imageVariants, socialVariants } =
@@ -40,14 +47,9 @@ const About: FC<AboutProps> = ({ user }) => {
                 variants={imageVariants}
               >
                 {/* Blue gradient background that extends beyond the image */}
-                <div className="absolute -bottom-4 -right-4 w-full h-full bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl"></div>
-
                 <div className="relative p-2 bg-black rounded-xl">
                   <Image
-                    src={
-                      user?.avatar_url ||
-                      "/placeholder.svg?height=320&width=320"
-                    }
+                    src={user.avatar_url}
                     alt="Profile"
                     className="w-full h-80 object-cover rounded-lg"
                   />
