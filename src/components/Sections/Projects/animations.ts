@@ -37,4 +37,4 @@ export const projectsAnimationVariants = {
     },
     tap: { scale: 0.95 },
   },
-};
+} as const;

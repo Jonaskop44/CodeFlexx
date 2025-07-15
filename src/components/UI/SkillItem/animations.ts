@@ -6,7 +6,7 @@ export const getSkillItemAnimations = (index = 0) => {
         scale: 1,
         rotate: 0,
         transition: {
-          type: "spring",
+          type: "spring" as const,
           stiffness: 260,
           damping: 20,
           delay: 0.1 + index * 0.1,

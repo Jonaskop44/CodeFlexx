@@ -1,21 +1,18 @@
 import { GitHubRepository } from "@/types/github";
 
 const isWebDevelopment = (project: GitHubRepository) =>
-  project.topics.some((topic) =>
-    ["nextjs", "tailwindcss", "nextui", "react"].includes(topic.toLowerCase())
-  );
+  project.topics.some((topic) => ["frontend"].includes(topic.toLowerCase()));
 
-const isMobileApp = (project: GitHubRepository) =>
+const isDesktopApp = (project: GitHubRepository) =>
   project.topics.some((topic) =>
-    ["mobile", "android", "ios", "react-native", "flutter"].includes(
-      topic.toLowerCase()
-    )
+    ["desktop-application"].includes(topic.toLowerCase())
   );
 
 const isBackend = (project: GitHubRepository) =>
-  project.topics.some((topic) =>
-    ["nestjs", "prisma"].includes(topic.toLowerCase())
-  );
+  project.topics.some((topic) => ["backend"].includes(topic.toLowerCase()));
+
+const isBot = (project: GitHubRepository) =>
+  project.topics.some((topic) => ["bot"].includes(topic.toLowerCase()));
 
 export function filterProjects(
   projects: GitHubRepository[],
@@ -25,18 +22,22 @@ export function filterProjects(
     case "Web Development":
       return projects.filter(isWebDevelopment);
 
-    case "Mobile Apps":
-      return projects.filter(isMobileApp);
+    case "Desktop Applications":
+      return projects.filter(isDesktopApp);
 
     case "Backend":
       return projects.filter(isBackend);
+
+    case "Bots":
+      return projects.filter(isBot);
 
     case "Other":
       return projects.filter(
         (project) =>
           !isWebDevelopment(project) &&
-          !isMobileApp(project) &&
-          !isBackend(project)
+          !isDesktopApp(project) &&
+          !isBackend(project) &&
+          !isBot(project)
       );
 
     default:

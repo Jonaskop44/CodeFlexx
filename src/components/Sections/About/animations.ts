@@ -34,11 +34,12 @@ export const aboutAnimationVariants = {
   },
 
   socialVariants: {
-    hidden: { scale: 0 },
+    hidden: { scale: 0, opacity: 0 },
     visible: (i: number) => ({
       scale: 1,
+      opacity: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 300,
         damping: 20,
         delay: 0.6 + i * 0.1,
@@ -50,4 +51,4 @@ export const aboutAnimationVariants = {
     },
     tap: { scale: 0.9 },
   },
-};
+} as const;

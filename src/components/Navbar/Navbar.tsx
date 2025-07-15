@@ -60,7 +60,12 @@ const Navbar = () => {
             {!isMobile && (
               <nav className="flex items-center space-x-6">
                 {navLinks.map((link) => (
-                  <Button key={link.name} className="rounded-2xl" size="lg">
+                  <Button
+                    key={link.name}
+                    className="rounded-2xl"
+                    size="lg"
+                    variant="light"
+                  >
                     <Link
                       href={link.href}
                       className="text-gray-300 font-bold text-xl hover:text-white transition-colors"

@@ -5,16 +5,30 @@ import Hero from "@/components/Sections/Hero/Hero";
 import Projects from "@/components/Sections/Projects/Projects";
 import Skills from "@/components/Sections/Skills/Skills";
 import { githubStore } from "@/data/githubStore";
+import { useEffect, useState } from "react";
 
 const Home = () => {
-  const { githubRepositories, githubUser } = githubStore();
+  const {
+    githubRepositories,
+    githubUser,
+    setGithubRepositories,
+    setGithubUser,
+  } = githubStore();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setGithubRepositories();
+    setGithubUser();
+
+    setIsLoading(false);
+  }, []);
 
   return (
     <div className="min-h-screen bg-black text-white">
       <Hero />
       <About user={githubUser} />
       <Skills />
-      <Projects projects={githubRepositories} />
+      <Projects projects={githubRepositories} isLoading={isLoading} />
     </div>
   );
 };

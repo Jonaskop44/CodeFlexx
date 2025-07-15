@@ -28,11 +28,11 @@ export const heroAnimationVariants = {
         type: "spring",
         stiffness: 400,
         damping: 10,
-        delay: 0.6,
+        delay: 0.1,
       },
     },
     hover: {
-      scale: 1.05,
+      scale: 1.1,
       transition: { duration: 0.2 },
     },
     tap: { scale: 0.95 },
@@ -45,4 +45,4 @@ export const heroAnimationVariants = {
       transition: { duration: 1.5 },
     },
   },
-};
+} as const;

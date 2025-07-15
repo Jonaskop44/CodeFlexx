@@ -23,7 +23,19 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
       <Card className="bg-white/5 backdrop-blur-sm border-none h-full overflow-hidden group rounded-2xl">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-purple-500/0 to-blue-500/0 group-hover:from-purple-500/10 group-hover:via-purple-500/5 group-hover:to-blue-500/10 transition-all duration-700"></div>
         <CardBody className="p-4">
-          <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
+          <div className="flex items-center gap-2 mb-2">
+            <h3 className="text-xl font-semibold text-white">{project.name}</h3>
+            {project.fork && (
+              <Chip
+                size="md"
+                color="warning"
+                variant="flat"
+                startContent={<Icon icon="mdi:source-fork" />}
+              >
+                Fork
+              </Chip>
+            )}
+          </div>
           <p className="text-gray-400 text-sm mb-4">
             {project.description || "No description available"}
           </p>
@@ -32,7 +44,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
               project.topics.map((topic, i) => (
                 <Chip
                   key={i}
-                  size="sm"
+                  size="md"
                   color="primary"
                   variant="flat"
                   className="transition-transform hover:scale-105"
@@ -42,7 +54,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
               ))}
             {project.language && (
               <Chip
-                size="sm"
+                size="md"
                 color="secondary"
                 variant="flat"
                 className="transition-transform hover:scale-105"
@@ -54,11 +66,11 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
         </CardBody>
         <CardFooter className="p-4 pt-0 flex justify-between">
           <div className="flex items-center gap-3">
-            <span className="text-xs text-gray-400 flex items-center">
+            <span className="text-gray-400 flex items-center">
               <Icon icon="mdi:star" className="inline mr-1" />{" "}
               {project.stargazers_count}
             </span>
-            <span className="text-xs text-gray-400 flex items-center">
+            <span className="text-gray-400 flex items-center">
               <Icon icon="mdi:source-fork" className="inline mr-1" />{" "}
               {project.forks_count}
             </span>
@@ -68,7 +80,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
             href={project.html_url}
             target="_blank"
             rel="noopener noreferrer"
-            size="sm"
+            size="md"
             color="primary"
             variant="flat"
             endContent={<Icon icon="mdi:open-in-new" />}
